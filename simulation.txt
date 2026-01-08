@@ -1,0 +1,35 @@
+steps and commands for the drone simulation 
+
+1. you must have the linux OS, so install the linux OS first (specially Ubuntu 24.04) 
+2.install the Q Ground Control
+ for that -
+ 
+ 1)On the command prompt enter(In the terminal):
+     sudo usermod -a -G dialout $USER
+     sudo apt-get remove modemmanager -y
+     sudo apt install gstreamer1.0-plugins-bad gstreamer1.0-libav gstreamer1.0-gl -y
+     sudo apt install libfuse2 -y
+     sudo apt install libxcb-xinerama0 libxkbcommon-x11-0 libxcb-cursor-dev -y
+ 
+ 2)Logout and login again to enable the change to user permissions.
+ 
+ 3)To install QGroundControl:      Download (  https://d176tv9ibo4jno.cloudfront.net/latest/QGroundControl-x86_64.AppImage  )
+                                
+ 4)Install (and run) using the terminal commands:
+   chmod +x ./QGroundControl-x86_64.AppImage
+   ./QGroundControl-x86_64.AppImage  
+   
+   
+3.Now you have to open your github account (if have already then it's good)
+4.To install the toolchain:
+     1)then you have to go to this link (  https://github.com/px4/px4-autopilot/  )
+     2)open the terminal use command 
+        git clone https://github.com/PX4/PX4-Autopilot.git --recursive
+     3)Run the ubuntu.sh with no arguments (in a bash shell) to install everything:
+         bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
+     4)Restart the computer on completion.
+5.Gazebo SITL simulation can be conveniently run using a make command as shown below:
+     1)cd /path/to/PX4-Autopilot
+     2)make px4_sitl gz_x500
+     
+    
